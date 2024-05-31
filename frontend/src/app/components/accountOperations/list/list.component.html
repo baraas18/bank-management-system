@@ -1,0 +1,21 @@
+
+<div id="operations" class="row">
+    <div *ngFor="let p of accountOperations">
+
+        <div class="card" style="width: 18rem; height: 30rem;">
+            <img class="card-img-top" [src]="'/assets/images/' + p.type + '.png'" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Action ID: {{p.id}}</h5>
+                <h5 class="card-title">Sum: {{p.sum}}</h5>
+                <p class="card-text">Account number: {{p.accountNumber}}</p>
+                <p class="card-text">Date: {{p.date}}</p>
+                <ng-container *ngIf="p.type === 'loan'">
+                    <p class="card-text">Interest: {{p.interest}}</p>
+                    <p class="card-text">Amount of Payments: {{p.amountOfPayments}}</p>
+                </ng-container>
+
+            </div>
+        </div>
+
+    </div>
+</div>

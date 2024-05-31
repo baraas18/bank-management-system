@@ -1,0 +1,43 @@
+table {
+    margin: 20px auto;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+    background-color: skyblue;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(111, 135, 144);
+    color: white;
+}
+
+th > a > img {
+    width: 100px;
+}
+
+#operations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: calc(33.33% - 40px);
+    float: left;
+}
+

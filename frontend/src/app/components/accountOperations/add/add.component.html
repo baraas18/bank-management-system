@@ -1,0 +1,69 @@
+<div>
+
+    <form (submit)="submitForm()" #addAccountOperationForm="ngForm">
+        <table>
+            <tr>
+                <td><label>Account Number</label></td>
+                <td><input type="number" [(ngModel)]="accountOperation.accountNumber" name="accountNumber" required
+                        #accountNumberInput="ngModel"></td>
+                <td><span class="err"
+                        *ngIf="accountNumberInput.errors?.['required'] && accountNumberInput.touched">Account Number is
+                        a required field</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Type</label></td>
+                <td><select type="text" [(ngModel)]="accountOperation.type" name="type" required #typeInput="ngModel">
+                        <option value="withdrawal">withdrawal</option>
+                        <option value="deposit">deposit</option>
+                        <option value="loan">loan</option>
+                    </select>
+                </td>
+                <td><span class="err" *ngIf="typeInput.errors?.['required'] && typeInput.touched">Type is a required
+                        field</span></td>
+            </tr>
+
+
+            <tr>
+                <td><label>Date</label></td>
+                <td><input type="datetime-local" [(ngModel)]="accountOperation.date" name="date" required
+                        #dateInput="ngModel"></td>
+                <td><span class="err" *ngIf="dateInput.errors?.['required'] && dateInput.touched">Date is a required
+                        field</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Sum</label></td>
+                <td><input type="number" step="0.01" [(ngModel)]="accountOperation.sum" name="sum" required
+                        #sumInput="ngModel"></td>
+                <td><span class="err" *ngIf="sumInput.errors?.['required'] && sumInput.touched">Price is a required
+                        field</span></td>
+            </tr>
+            <ng-container *ngIf="typeInput.value === 'loan'">
+                <tr>
+                    <td><label>Interest</label></td>
+                    <td><input type="number" step="0.01" [(ngModel)]="accountOperation.interest" name="interest"
+                            [required]="typeInput.value === 'loan'" #interestInput="ngModel">
+                    </td>
+                    <td><span class="err" *ngIf="interestInput.errors?.['required'] && interestInput.touched">Interest
+                            is
+                            required when selecting loan</span></td>
+                </tr>
+                <tr>
+                    <td><label>Amount of Payments</label></td>
+                    <td><input type="number" [(ngModel)]="accountOperation.amountOfPayments" name="amountOfPayments"
+                            [required]="typeInput.value === 'loan'" #amountOfPaymentsInput="ngModel"></td>
+                    <td><span class="err"
+                            *ngIf="amountOfPaymentsInput.errors?.['required'] && amountOfPaymentsInput.touched">Amount
+                            of
+                            Payments
+                            is required when selecting loan</span></td>
+                </tr>
+            </ng-container>
+
+        </table>
+
+        <button [disabled]="addAccountOperationForm.invalid">Submit</button>
+    </form>
+</div>

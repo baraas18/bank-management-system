@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "841e534a-546c-41de-90ab-ba2c5cb9b3c5",
+		"name": "BankAccounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14459061"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/accountOperations/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/accountOperations/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accountOperations",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/accountOperations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountNumber\": 3,\n    \"type\": \"withdrawal\",\n    \"date\": \"2024-06-01\",\n    \"sum\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/accountOperations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accountOperations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

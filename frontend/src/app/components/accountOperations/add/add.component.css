@@ -1,0 +1,25 @@
+table {
+    margin: 20px auto;
+    border: 1px solid;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.err {
+    color: red;
+}
+
+input.ng-invalid.ng-touched {
+    background-color: pink;
+    border: 2px solid red;
+}
+
+tr {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}

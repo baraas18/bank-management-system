@@ -1,0 +1,21 @@
+{
+    "app": {
+        "name": "bankaccounts",
+        "port": 8080,
+        "protocol": "http",
+        "host": "localhost",
+        "secret": "bankaccounts-secret",
+        "jwt": {
+            "expires": "3h",
+            "secret": "bankaccounts-secret"
+        }
+    },
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "BankAccounts",
+        "port": 3306,
+        "connectionLimit": 10
+    }
+}
